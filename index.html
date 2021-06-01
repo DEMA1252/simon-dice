@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        font-family: 'Brush Script MT', cursive;
+      }
+      </style>
+    <style>
+      .horizontal-line {
+          padding-bottom: 80px;
+          border-bottom: 12px solid #92967d; 
+      }
+      </style>
+
+<style>
+  .horizontal-line2 {
+      padding-bottom: 10px;
+      border-bottom: 12px solid #92967d; 
+  }
+  </style>
+
+
+</head>
+<body>
+  <div class="horizontal-line"></div>
+    <center>
+        <body bgcolor="c8c6a7">
+          <h1 style="color: #435560;">Simon dice</h1>
+          <div class="horizontal-line2">Otra to-do list</div>
+            <table >
+                <tr>
+                    <td><img src="simon.png" alt="" width="200"></td>
+                    <td>   
+                        <ul>
+                         <li> 📥 Agrega tareas para el dia de <b>Hoy</b> </li>
+                            <li>⚠ Por Favor no <b>RECARGUES</b>  la pagina se borra <b>TODO</b><br>
+                                <li> 🎁 Si terminas da <b>Click</b> en el premio </li>
+                    
+                </li> 
+                </ul>  
+                
+                </td>
+                    
+                </tr>
+                 </table>
+            <hr>
+    
+      <form id="ourForm"> 
+      <input id= "ourField" type= "text" autocomplete = "off">
+      <button> Para Hoy</button>
+      
+    </form>
+      
+    <h3>Simon dice; El trabajo que nunca se empieza es el que tarda más en finalizarse.</h3>
+    <ul id="ourList">
+    
+    </ul>
+              </center>
+    
+          <script>
+          let ourForm = document.getElementById("ourForm")
+let ourField = document.getElementById("ourField")  
+let ourList = document.getElementById("ourList")
+ourForm.addEventListener("submit",(e)=> {
+  e.preventDefault()
+                                    
+ createItem (ourField.value)
+})                                     
+ function createItem (x){
+   let ourHTML = `<li>${x} <button onclick="deleteItem(this)"> ✔</button></li>`
+   ourList.insertAdjacentHTML ("beforeend",ourHTML)
+   ourField.value ="" 
+   ourField.focus()
+ }
+function deleteItem(elementToDelete) {
+  elementToDelete.parentElement.remove() 
+}
+      </script> 
+      <center>
+    <a href="https://www.youtube.com/watch?v=8jOomvPnRZ8">🎁</a>
+    </center>
+</body>
+</html>
